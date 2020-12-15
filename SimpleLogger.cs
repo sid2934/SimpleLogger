@@ -4,7 +4,7 @@ using System.Net;
 
 namespace SimpleLogger
 {
-    public class Logger
+    public class SimpleLogger
     {
         private const string FILE_EXT = ".log";
         private static readonly string datetimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
@@ -12,13 +12,13 @@ namespace SimpleLogger
         private static string _jobid = "";
         private static int _loggingLevel = 0;
 
-        internal static void SetLoggingLevel(int verbosityLevel, bool writeToConsole)
+        public static void SetLoggingLevel(int verbosityLevel, bool writeToConsole)
         {
             _loggingLevel = verbosityLevel > loggingLevelMap.Count ? loggingLevelMap.Count : verbosityLevel;
             _writeToConsole = writeToConsole;
         }
 
-        internal static void SetJobId(string jobId)
+        public static void SetJobId(string jobId)
         {
             _jobid = string.IsNullOrWhiteSpace(jobId) ? "" : "_" + jobId;
         }
