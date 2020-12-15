@@ -10,7 +10,7 @@ namespace SimpleLogger
         private static readonly string datetimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
         private static string LogFilename => System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + $"_{Dns.GetHostName()}{_jobid}" + FILE_EXT;
         private static string _jobid = "";
-        private static int _loggingLevel = 0;
+        private static int _loggingLevel = 2;
 
         public static void SetLoggingLevel(int verbosityLevel, bool writeToConsole)
         {
@@ -38,7 +38,6 @@ namespace SimpleLogger
 
         /// <summary>
         /// Stops the SimpleLogger
-        /// If log file does not exist, it will be created automatically.
         /// </summary>
         public static void Stop()
         {
