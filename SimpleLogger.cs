@@ -4,7 +4,7 @@ using System.Net;
 
 namespace SimpleLogger
 {
-    public class SimpleLogger
+    public class Logger
     {
         private const string FILE_EXT = ".log";
         private static readonly string datetimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
