@@ -104,7 +104,7 @@ namespace SimpleLogger
         {
             try
             {
-                using (System.IO.StreamWriter writer = new System.IO.StreamWriter(LogFilename, append, System.Text.Encoding.UTF8))
+                using (var writer = new System.IO.StreamWriter(LogFilename, append, System.Text.Encoding.UTF8))
                 {
                     if (!string.IsNullOrEmpty(text))
                     {
@@ -141,7 +141,7 @@ namespace SimpleLogger
         }
 
 
-        private static readonly Dictionary<int, List<LogLevel>> loggingLevelMap = new Dictionary<int, List<LogLevel>>()
+        private static readonly Dictionary<int, List<LogLevel>> loggingLevelMap = new()
         {
             {0, new List<LogLevel>()
                 {
